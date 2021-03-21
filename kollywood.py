@@ -7,7 +7,7 @@ Author: Raja CSP
 '''
 
 def startpy():
-    print("Vanakkam Chennai!")
+    print('Vanakkam Chennai!')
 
 
 if __name__ == "__main__":
