@@ -5,11 +5,11 @@ Author: Raja CSP
 
 
 '''
-
+from flask import Flask,render_template
 import random
 import json
 
-
+app = Flask(__name__)
 
 
 FILEPATH = 'chemistry_meter.json'
@@ -47,7 +47,7 @@ def get_chemistry_meter(actor_name, actress_name):
     # print(ch_meter)
     return ch_meter
     
-
+@app.route("/", methods=["GET","POST"])
 def startpy():
 
     # print('Vanakkam Chennai!')
@@ -59,6 +59,9 @@ def startpy():
 
     print(f'{actor_name} - {actress_name} : {local_meter}')
 
+    return render_template("index.html", actor=actor_name, actress=actress_name, score=local_meter)
+
 
 if __name__ == "__main__":
-    startpy()
+    app.run( debug = True,host="0.0.0.0",port="3000")
+    
