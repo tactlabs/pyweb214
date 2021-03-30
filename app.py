@@ -9,7 +9,8 @@ from flask import Flask,render_template
 import random
 import json
 
-app = Flask(__name__)
+app  = Flask(__name__)
+PORT = 3024
 
 
 FILEPATH = 'chemistry_meter.json'
@@ -63,5 +64,5 @@ def startpy():
 
 
 if __name__ == "__main__":
-    app.run( debug = True,host="0.0.0.0",port="3000")
+    app.run( debug = True,host="0.0.0.0",port = PORT)
     
